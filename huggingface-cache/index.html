@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hugging Face cache is filling my drive | Sparewise</title>
+<meta name="description" content="Where Hugging Face keeps downloaded models on Windows, why old revisions pile up, and how to free the space safely.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>The Hugging Face cache is filling my drive</h1>
+<p><strong>Short answer:</strong> models downloaded with <code>transformers</code>, <code>diffusers</code> or <code>huggingface_hub</code> go to <code>%USERPROFILE%\.cache\huggingface\hub</code>. When a model is updated, the old revision often stays next to the new one, so the same model can take space twice.</p>
+<h2>By hand</h2>
+<ol>
+<li>See what is there: <code>hf cache scan</code> (older versions: <code>huggingface-cli scan-cache</code>).</li>
+<li>Remove models or old revisions, choosing from a list: <code>huggingface-cli delete-cache</code></li>
+<li>To keep the cache on another drive, set <code>HF_HOME</code> to a folder there.</li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Lists each Hugging Face model with its size and last use, next to Ollama and LM Studio.</li>
+<li>Shows old revisions you no longer need, and how much they take.</li>
+<li>Gives the command to remove each. Models are slow to download again, so it leaves the choice to you.</li>
+</ul>
+<h2>Sparewise does this safely</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

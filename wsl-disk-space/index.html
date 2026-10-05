@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSL is using too much disk space on Windows | Sparewise</title>
+<meta name="description" content="Why the WSL ext4.vhdx disk keeps growing, how to give the space back to Windows, and how Sparewise does it safely.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>WSL is using too much disk space on Windows</h1>
+<p><strong>Short answer:</strong> each WSL distribution lives in one virtual disk file, <code>ext4.vhdx</code>. It grows as you add files in Linux, but it does not shrink when you delete them, so Windows never gets that space back by itself.</p>
+<h2>Where the disk is</h2>
+<ul>
+<li>Store installs: <code>%LocalAppData%\Packages\CanonicalGroupLimited…\LocalState\ext4.vhdx</code></li>
+<li>Newer installs: <code>%LocalAppData%\wsl\{id}\ext4.vhdx</code></li>
+<li>Docker Desktop keeps its own under <code>%LocalAppData%\Docker\wsl</code></li>
+</ul>
+<h2>By hand</h2>
+<ol>
+<li>Clean up inside Linux first (old build output, <code>~/.cache</code>).</li>
+<li>Shut WSL down: <code>wsl --shutdown</code></li>
+<li>Let the disk give space back by itself from now on: <code>wsl --manage &lt;distro&gt; --set-sparse true</code> (recent WSL versions). The older ways, <code>Optimize-VHD</code> or diskpart's <code>compact vdisk</code>, need administrator rights.</li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Lists every WSL and Docker disk with its size.</li>
+<li>Can switch a disk to sparse, after asking. It shuts WSL down first, so save your work in Linux windows.</li>
+<li>Never deletes a distribution. That is your call (<code>wsl --unregister</code> deletes everything in it).</li>
+</ul>
+<h2>Sparewise does this safely</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

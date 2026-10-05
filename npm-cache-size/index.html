@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The npm cache is huge: is it safe to clear? | Sparewise</title>
+<meta name="description" content="Where npm keeps its cache on Windows, why it grows, whether clearing it is safe, and how Sparewise handles it.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>The npm cache is huge: is it safe to clear?</h1>
+<p><strong>Short answer:</strong> yes. npm's cache (<code>%LocalAppData%\npm-cache</code>) only holds copies of packages it downloaded. Clear it and npm downloads what it needs again on the next install. It costs only time and bandwidth.</p>
+<h2>By hand</h2>
+<ol>
+<li>Check it: <code>npm cache verify</code> (this also tidies it).</li>
+<li>Clear it: <code>npm cache clean --force</code></li>
+<li>pnpm and Yarn keep their own: <code>pnpm store prune</code>, <code>yarn cache clean</code>.</li>
+<li>Often bigger are the <code>node_modules</code> folders in old projects. Those belong to each project, so delete them only in projects you no longer work on.</li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Finds npm, pnpm, Yarn, pip, uv, NuGet, Gradle, Maven, Cargo and Go caches in one scan.</li>
+<li>Says whether each rebuilds by itself, and why.</li>
+<li>Moves what you choose to the Recycle Bin, so you can put it back. It never deletes permanently.</li>
+</ul>
+<h2>Sparewise does this safely</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

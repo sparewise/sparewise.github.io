@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Ollama stores models on Windows | Sparewise</title>
+<meta name="description" content="Where Ollama keeps models on Windows, how to see which you still use, how to remove or move them, and how Sparewise helps.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>Where Ollama stores models on Windows</h1>
+<p><strong>Short answer:</strong> in <code>%USERPROFILE%\.ollama\models</code>. Each model is several gigabytes, and the files have hash names, so Explorer cannot tell you which model is which.</p>
+<h2>By hand</h2>
+<ol>
+<li>See your models and sizes: <code>ollama list</code></li>
+<li>Remove one you no longer use: <code>ollama rm &lt;name&gt;</code>. Do not delete files under <code>blobs</code> yourself: models share layers, and a missing one breaks other models.</li>
+<li>To keep models on another drive, set the <code>OLLAMA_MODELS</code> environment variable to a folder there and restart Ollama.</li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Lists Ollama, LM Studio and Hugging Face models one by one, with size and when each was last used.</li>
+<li>Shows layers shared between models, and how much removing one really frees.</li>
+<li>Gives the exact <code>ollama rm</code> command. It never removes a model itself: models are slow to download again, so that is your call.</li>
+</ul>
+<h2>Sparewise does this safely</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>
