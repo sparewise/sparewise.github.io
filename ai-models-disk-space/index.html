@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI models are filling my drive (Ollama, LM Studio, Hugging Face) | Sparewise</title>
+<meta name="description" content="Local AI models take several GB each. See which ones you still use and remove the rest with each tool's own command.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>AI models are filling my drive</h1>
+<p><strong>Short answer:</strong> Each local model is several gigabytes, and tools keep every version you have tried. Hugging Face also keeps a download cache that can hold the same model twice.</p>
+<h2>By hand</h2>
+<ul>
+<li><strong>Ollama:</strong> <code>ollama list</code>, then <code>ollama rm &lt;name&gt;</code></li>
+<li><strong>LM Studio:</strong> My Models, then delete</li>
+<li><strong>Hugging Face:</strong> <code>huggingface-cli delete-cache</code></li>
+</ul>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Lists every model one by one: its size, which tool it belongs to, and when it was last loaded.</li>
+<li>Gives each tool's own remove command. Models are your call, so Sparewise never removes one by itself.</li>
+<li>"Can it come back?" tells you which models can be downloaded again and which exist only on this PC.</li>
+</ul>
+<h2>Sparewise does this safely</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparewise: see why your Windows drive is full, and free space safely</title>
+<meta name="description" content="Sparewise finds the space developer and AI tools fill (caches, AI models, Docker and WSL disks) and frees it safely, with undo for everything. Free for Windows. No telemetry.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="#how">How it works</a><a href="#ai">For AI assistants</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <h1>See why your drive is full.<br>Free space safely.</h1>
+    <p class="lead">Sparewise finds the space that developer and AI tools quietly fill (package caches, local AI models, Docker and WSL disks) plus ordinary Windows clutter. It tells you what each item is, frees it only when you say so, and can put back anything it moved.</p>
+    <a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a>
+    <a class="button secondary" href="https://github.com/sparewise/sparewise/releases/latest">All downloads</a>
+    <p class="meta">Free · Windows 10 and 11 · x64 and ARM · No admin rights · No account · No telemetry</p>
+  </section>
+
+  <div class="grid">
+    <div class="card"><h3>One clear answer</h3><p>"Why is my drive full?" The drive in plain parts: what rebuilds itself, what can be downloaded again, and what exists only on this PC.</p></div>
+    <div class="card"><h3>"Free 20 GB"</h3><p>Picks the smallest set of safe caches that reaches your goal, and asks once.</p></div>
+    <div class="card"><h3>Undo for everything</h3><p>Changes go to the Recycle Bin or an undo window. Sparewise never deletes permanently.</p></div>
+    <div class="card"><h3>Honest results</h3><p>It measures what was really freed. Files a program has open stay where they are, and it tells you.</p></div>
+  </div>
+
+  <h2 id="how">What it finds</h2>
+  <ul class="ticks">
+    <li><strong>Developer caches:</strong> npm, pnpm, Yarn, pip, uv, conda, Cargo, Go, Gradle, Maven, NuGet and more</li>
+    <li><strong>AI:</strong> Ollama, LM Studio and Hugging Face models one by one, with when each was last used, plus the caches of AI coding tools</li>
+    <li><strong>Docker and WSL disks</strong>, which never shrink by themselves</li>
+    <li><strong>Windows:</strong> temporary files, update leftovers, old installers, browser caches</li>
+    <li><strong>Your own files:</strong> large videos, duplicates and forgotten folders, reported only and never removed by Sparewise</li>
+  </ul>
+
+  <h2>Safe by design</h2>
+  <ul class="ticks">
+    <li>Scanning changes nothing.</li>
+    <li>It asks before every change.</li>
+    <li>Only caches that rebuild by themselves are offered, each checked by a tested safety rule.</li>
+    <li>It never empties your Recycle Bin, so you decide when space is really released.</li>
+    <li>Private: nothing about your PC is ever sent anywhere.</li>
+  </ul>
+
+  <h2 id="ai">For AI assistants</h2>
+  <p>Sparewise is also an MCP server. Claude, Cursor, VS Code, Claude Code and Codex can ask why your drive is full and plan a cleanup, and they can apply it only within limits you set, never permanently. Connect them in the app (Settings → Connect AI assistants) or from a terminal:</p>
+  <pre>claude mcp add sparewise -- npx -y sparewise mcp</pre>
+
+  <h2>Common problems</h2>
+  <div class="grid">
+    <a class="card" href="/docker-disk-space/" style="text-decoration:none"><h3>Docker is using too much disk space</h3><p>Why Docker's disk only grows, and how to get the space back.</p></a>
+    <a class="card" href="/ai-models-disk-space/" style="text-decoration:none"><h3>AI models are filling my drive</h3><p>Ollama, LM Studio and Hugging Face: which models you still use.</p></a>
+    <a class="card" href="/developer-caches/" style="text-decoration:none"><h3>Developer caches are eating my SSD</h3><p>npm, pip, Gradle, NuGet: what is safe to clear.</p></a>
+  </div>
+
+  <p class="note">Windows may say "Windows protected your PC" the first time, because Sparewise is not code-signed yet. Choose <strong>More info → Run anyway</strong>. Each release lists checksums so you can verify your download.</p>
+</main>
+<footer>
+  <a href="https://github.com/sparewise/sparewise/releases/latest">Downloads</a>
+  <a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a>
+  <a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <a href="https://www.npmjs.com/package/sparewise">npm</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

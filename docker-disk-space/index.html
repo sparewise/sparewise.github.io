@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docker is using too much disk space on Windows | Sparewise</title>
+<meta name="description" content="Why Docker Desktop's disk keeps growing on Windows, how to reclaim the space by hand, and how Sparewise does it safely.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>Docker is using too much disk space on Windows</h1>
+<p><strong>Short answer:</strong> Docker Desktop keeps everything in one virtual disk (a <code>.vhdx</code> file under <code>%LocalAppData%\Docker\wsl</code>). Old images, stopped containers and build cache pile up inside it, and the file does not shrink by itself, even after you clean up inside Docker.</p>
+<h2>By hand</h2>
+<ol>
+<li>See what Docker can reclaim: <code>docker system df</code></li>
+<li>Remove what nothing uses: <code>docker system prune</code>. Add <code>-a</code> for unused images; use <code>--volumes</code> only if you are sure, because volumes can hold databases.</li>
+<li>Shrink the disk file so Windows gets the space back. WSL must be shut down first (<code>wsl --shutdown</code>).</li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Shows what Docker itself says is reclaimable, with the exact prune command. It never runs a prune for you.</li>
+<li>Shows the build-cache limit and where to set it, so it does not fill up again.</li>
+<li>Can give the WSL disk space back to Windows, after asking, and closes Linux windows first.</li>
+<li>Never deletes volumes. That call is yours.</li>
+</ul>
+<h2>Sparewise does this safely</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

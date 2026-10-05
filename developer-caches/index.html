@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer caches are eating my SSD (npm, pip, Gradle, NuGet) | Sparewise</title>
+<meta name="description" content="Package manager caches rebuild by themselves, so clearing them is safe. Find them all in one scan and free a set amount with undo.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>Developer caches are eating my SSD</h1>
+<p><strong>Short answer:</strong> Package managers keep a copy of everything they ever downloaded. These caches rebuild by themselves, so clearing them is safe. The next install is just a little slower.</p>
+<h2>By hand</h2>
+<p><code>npm cache clean --force</code>, <code>pip cache purge</code>, <code>dotnet nuget locals all --clear</code>, delete <code>~/.gradle/caches</code>… one tool at a time, and you need to know which folders are safe.</p>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Finds them all in one scan, each with a tested safety rule and the evidence behind it.</li>
+<li>"Free 20 GB" picks the smallest set of caches that reaches your goal, and puts everything in an undo window first.</li>
+<li>Shows how fast each cache grows back, so you know what is worth clearing.</li>
+<li>Lists NuGet versions no project uses, and old Node and Java versions with the command that removes each.</li>
+</ul>
+<h2>Sparewise does this safely</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>
