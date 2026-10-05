@@ -38,3 +38,5 @@ article { max-width: 760px; }
 article h1 { font-size: clamp(28px, 4.5vw, 38px); line-height: 1.2; margin: 40px 0 12px; }
 footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 64px; padding-top: 20px; padding-bottom: 40px; }
 footer a { color: var(--muted); margin-right: 16px; }
+.shot { margin: 8px 0 36px; }
+.shot img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,.08); display: block; }

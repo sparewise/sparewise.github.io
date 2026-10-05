@@ -21,6 +21,8 @@
     <p class="meta">Free · Windows 10 and 11 · x64 and ARM · No admin rights · No account · No telemetry</p>
   </section>
 
+  <figure class="shot"><img src="/img/home.png" width="1280" height="860" alt="Sparewise home: the drive in parts (can be cleared safely, AI models, containers and virtual disks) and Smart Care offering to free 17.3 GB safely"></figure>
+
   <div class="grid">
     <div class="card"><h3>One clear answer</h3><p>"Why is my drive full?" The drive in plain parts: what rebuilds itself, what can be downloaded again, and what exists only on this PC.</p></div>
     <div class="card"><h3>"Free 20 GB"</h3><p>Picks the smallest set of safe caches that reaches your goal, and asks once.</p></div>
@@ -36,6 +38,8 @@
     <li><strong>Windows:</strong> temporary files, update leftovers, old installers, browser caches</li>
     <li><strong>Your own files:</strong> large videos, duplicates and forgotten folders, reported only and never removed by Sparewise</li>
   </ul>
+
+  <figure class="shot"><img src="/img/using-space.png" width="1280" height="860" loading="lazy" alt="What is using space: Docker data, virtual machines and the Hugging Face cache as tiles, with 16.7 GB that rebuilds by itself marked safe to clear"></figure>
 
   <h2>Safe by design</h2>
   <ul class="ticks">
@@ -61,7 +65,9 @@
     <a class="card" href="/huggingface-cache/" style="text-decoration:none"><h3>Hugging Face cache filling up</h3><p>Old model revisions that take space twice.</p></a>
   </div>
 
-  <p class="note">Windows may say "Windows protected your PC" the first time, because Sparewise is not code-signed yet. Choose <strong>More info → Run anyway</strong>. Each release lists checksums so you can verify your download.</p>
+  <h2 id="first-run">The first time you run it</h2>
+  <p>Windows may show <strong>"Windows protected your PC"</strong>. That is because Sparewise is new and not code-signed yet, not because anything was found in it. Choose <strong>More info</strong>, then <strong>Run anyway</strong>. It installs for your account only and needs no administrator rights.</p>
+  <p class="meta">Want to check the download first? Each <a href="https://github.com/sparewise/sparewise/releases/latest">release</a> lists SHA-256 checksums. In PowerShell: <code>Get-FileHash .\Sparewise-win-Setup.exe</code></p>
 </main>
 <footer>
   <a href="https://github.com/sparewise/sparewise/releases/latest">Downloads</a>
