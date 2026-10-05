@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Sparewise decides what is safe to clear | Sparewise</title>
+<meta name="description" content="What Sparewise will clear, what it never touches, and the checks it runs before every change.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>How Sparewise decides what is safe to clear</h1>
+<p><strong>Short answer:</strong> not by file type or by guessing. Sparewise only offers to clear folders it knows by exact location, each with a written, tested reason why it rebuilds by itself. Everything else is reported, never removed.</p>
+<h2>What it offers to clear</h2>
+<ul class="ticks">
+<li>Caches at known locations: npm, pnpm, Yarn, pip, uv, NuGet, Gradle, Maven, Cargo, Go, browser and editor caches, Windows temporary files and more.</li>
+<li>Each has a rule saying why it comes back by itself (the tool that made it downloads or rebuilds it when needed). The rules are covered by automated tests.</li>
+<li>No AI decides this. An assistant connected over MCP can suggest and plan, but the verdict is always the tested rule.</li>
+</ul>
+<h2>What it never removes</h2>
+<ul class="ticks">
+<li><strong>AI models</strong> (Ollama, LM Studio, Hugging Face): slow to download again. It reports size, last use, shared layers and old revisions, and gives you the command to remove one.</li>
+<li><strong>Docker volumes, WSL distributions, virtual machines:</strong> they can hold your data. It shows the size and the right tool's command.</li>
+<li><strong>Your own files:</strong> large videos, duplicates and old downloads are listed so you can decide. Sparewise does not remove them.</li>
+<li>Any folder you add to the exclusions in Settings.</li>
+</ul>
+<h2>Checks before every change</h2>
+<ol>
+<li>The plan is shown to you first, with sizes. Nothing changes until you confirm (or, for an AI assistant, unless your own limits allow it).</li>
+<li>Right before each step runs, it is checked again: the path must still be exactly the known location, and the rule must still hold. If not, that step is refused.</li>
+<li>Files a program has open are left where they are, and it tells you, so you can close the program and try again.</li>
+<li>Everything goes to the Recycle Bin or an undo window. If the Recycle Bin is turned off or too small for an item, Sparewise refuses rather than deleting.</li>
+<li>Afterwards it measures how much space was really freed.</li>
+</ol>
+<h2>AI assistants</h2>
+<p>Over MCP an assistant gets the same rules plus your own limits: a size cap, which kinds of change it may make alone, and folders it must never touch. It can never delete permanently, and every change it makes is recorded with its name and reason and can be undone.</p>
+<h2>Try it</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>
