@@ -56,6 +56,18 @@
   <p>Sparewise is also an MCP server. Claude, Cursor, VS Code, Claude Code and Codex can ask why your drive is full and plan a cleanup, and they can apply it only within limits you set, never permanently. Connect them in the app (Settings → Connect AI assistants) or from a terminal:</p>
   <pre>claude mcp add sparewise -- npx -y sparewise mcp</pre>
 
+  <h2 id="faq">Questions people ask</h2>
+  <h3>Is it free?</h3>
+  <p>Yes, everything is free today, with no account and no ads. Later versions may add paid features; anything you already have keeps working.</p>
+  <h3>Why is it not open source?</h3>
+  <p>It is closed source for now. What you are trusting it with is your files, so the safety rules are written down in plain words: see <a href="/how-it-decides/">how it decides what is safe</a>. It never deletes permanently, so a mistake can always be put back.</p>
+  <h3>Does it send anything anywhere?</h3>
+  <p>No. No telemetry, no analytics, no account. It goes online only when you ask it to check for updates. See the <a href="/privacy/">privacy page</a>.</p>
+  <h3>Mac or Linux?</h3>
+  <p>Windows 10 and 11 only for now.</p>
+  <h3>Why does Windows warn when I run it?</h3>
+  <p>It is new and not code-signed yet. See <a href="#first-run">the first time you run it</a>.</p>
+
   <h2>Common problems</h2>
   <div class="grid">
     <a class="card" href="/docker-disk-space/" style="text-decoration:none"><h3>Docker is using too much disk space</h3><p>Why Docker's disk only grows, and how to get the space back.</p></a>
