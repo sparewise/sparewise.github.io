@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparewise vs WinDirStat, WizTree and TreeSize | Sparewise</title>
+<meta name="description" content="An honest comparison: when a disk space analyzer like WinDirStat, WizTree or TreeSize is the right tool, and when Sparewise helps more.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>Sparewise vs WinDirStat, WizTree and TreeSize</h1>
+<p><strong>Short answer:</strong> WinDirStat, WizTree and TreeSize show <em>what</em> is big. They are excellent at it, and free or cheap. Sparewise tries to answer the next question: <em>is this safe to remove, and will it come back?</em> Many people will want both.</p>
+
+<h2>Use a disk space analyzer when</h2>
+<ul class="ticks">
+<li>You want to see every folder and file on the drive by size. WizTree is the fastest at this; WinDirStat's treemap is a classic.</li>
+<li>The space is your own files: videos, photos, old projects, game installs. You know what they are; you just need to find them.</li>
+<li>You want to delete things yourself and do not need advice.</li>
+</ul>
+
+<h2>Sparewise helps more when</h2>
+<ul class="ticks">
+<li>The space is in folders you did not create and do not recognise: <code>.ollama</code>, <code>huggingface\hub</code>, <code>npm-cache</code>, <code>.gradle</code>, <code>ext4.vhdx</code>. It says what each one is and whether it rebuilds by itself.</li>
+<li>You want to know if something is safe to clear before you clear it. Only caches with a tested rule are offered, and everything goes to the Recycle Bin or an undo window.</li>
+<li>Space is inside something an analyzer cannot see into: Docker's reclaimable data, old model revisions next to new ones, WSL disks that never shrink.</li>
+<li>You want an AI assistant to help, within limits you set (Sparewise is also an MCP server).</li>
+</ul>
+
+<h2>Side by side</h2>
+<div style="overflow-x:auto">
+<table style="border-collapse:collapse;width:100%;font-size:15px">
+<tr><th style="text-align:left;padding:6px;border-bottom:1px solid var(--line)"></th><th style="text-align:left;padding:6px;border-bottom:1px solid var(--line)">Disk analyzers</th><th style="text-align:left;padding:6px;border-bottom:1px solid var(--line)">Sparewise</th></tr>
+<tr><td style="padding:6px">Every folder by size</td><td style="padding:6px">Yes, their strength</td><td style="padding:6px">Yes (Drive map), less detailed</td></tr>
+<tr><td style="padding:6px">Says what a folder is</td><td style="padding:6px">No</td><td style="padding:6px">Yes, for known developer, AI and Windows folders</td></tr>
+<tr><td style="padding:6px">Says if it is safe to remove</td><td style="padding:6px">No</td><td style="padding:6px">Yes, by tested rules</td></tr>
+<tr><td style="padding:6px">Deletes</td><td style="padding:6px">Yes, permanently if you choose</td><td style="padding:6px">Never permanently: Recycle Bin or undo window</td></tr>
+<tr><td style="padding:6px">AI models, Docker, WSL</td><td style="padding:6px">As plain folders and files</td><td style="padding:6px">Model by model, Docker's own reclaimable figures, WSL disks</td></tr>
+<tr><td style="padding:6px">Open source</td><td style="padding:6px">WinDirStat: yes. WizTree, TreeSize: no</td><td style="padding:6px">No (free, no telemetry)</td></tr>
+<tr><td style="padding:6px">Platforms</td><td style="padding:6px">Windows</td><td style="padding:6px">Windows</td></tr>
+</table>
+</div>
+<p class="meta">If an analyzer already shows you everything you need, keep using it. Sparewise is for the folders you look at and think "what is this, and can I delete it?"</p>
+<h2>Try it</h2>
+<p><a class="button" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download for Windows</a></p>
+<p class="meta">Free · No admin rights · No telemetry · Everything it moves can be put back</p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a><a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>
