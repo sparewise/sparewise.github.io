@@ -19,6 +19,7 @@
 <ul class="ticks">
 <li>Caches at known locations: npm, pnpm, Yarn, pip, uv, NuGet, Gradle, Maven, Cargo, Go, browser and editor caches, Windows temporary files and more.</li>
 <li>Each has a rule saying why it comes back by itself (the tool that made it downloads or rebuilds it when needed). The rules are covered by automated tests.</li>
+<li>Build folders inside your projects (node_modules, virtual environments, target, bin and obj) count only beside the project file of the tool that makes them, and never when git tracks any file in them: some projects commit their dist or vendor folder.</li>
 <li>No AI decides this. An assistant connected over MCP can suggest and plan, but the verdict is always the tested rule.</li>
 </ul>
 <h2>What it never removes</h2>
