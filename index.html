@@ -39,12 +39,18 @@
     <div class="card"><h3>AI models stored once</h3><p>The same model in Ollama and LM Studio takes the space twice. <strong>Store once</strong> keeps one copy for both programs. Nothing is deleted.</p></div>
     <div class="card"><h3>Sees inside WSL</h3><p>From Windows, WSL is one big file. Sparewise lists the npm, pip, apt and model caches inside it, with the command that clears each.</p></div>
     <div class="card"><h3>Frees the cheapest space first</h3><p>Asked for 20 GB, it takes what comes back by itself without downloading before anything your next build would fetch again.</p></div>
+    <div class="card"><h3>Packages you keep twice</h3><p>The same npm package in 18 projects, the same Python library in 14 environments. Sparewise measures what pnpm or uv would save: 5 GB on one developer PC.</p></div>
+    <div class="card"><h3>Hibernate old projects</h3><p>A project you have not touched in months becomes one archive without node_modules or build folders, checked file by file before the original goes to the Recycle Bin. Open the archive to bring it back.</p></div>
+    <div class="card"><h3>Leftovers no other cleaner sees</h3><p>Old editor extensions VS Code, Cursor and Windsurf keep after updates (1 GB on one PC), installers apps keep after updating themselves, and git history waiting to be packed.</p></div>
+    <div class="card"><h3>Knows what is yours</h3><p>A build folder you committed to git is never offered, and before clearing, Sparewise tells you which open programs still use those files.</p></div>
   </div>
 
   <h2 id="how">What it finds</h2>
   <ul class="ticks">
     <li><strong>Developer caches:</strong> npm, pnpm, Yarn, pip, uv, conda, Cargo, Go, Gradle, Maven, NuGet and more</li>
-    <li><strong>AI:</strong> Ollama, LM Studio and Hugging Face models one by one, with when each was last used, plus the caches of AI coding tools</li>
+    <li><strong>AI:</strong> Ollama, LM Studio and Hugging Face models one by one, with when each was last used and old versions, plus the caches of AI coding tools</li>
+    <li><strong>Projects:</strong> node_modules, virtual environments and build folders, idle projects worth hibernating, and packages stored again in many projects</li>
+    <li><strong>Editors and apps:</strong> old VS Code, Cursor, Windsurf and Antigravity extensions, and installers apps keep after updating</li>
     <li><strong>Docker and WSL disks</strong>, which never shrink by themselves</li>
     <li><strong>Windows:</strong> temporary files, update leftovers, old installers, browser caches</li>
     <li><strong>Your own files:</strong> large videos, duplicates and forgotten folders, reported only and never removed by Sparewise</li>
