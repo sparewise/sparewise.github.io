@@ -14,13 +14,13 @@
 </header>
 <main><article>
 <h1>How Sparewise decides what is safe to clear</h1>
-<p><strong>Short answer:</strong> not by file type or by guessing. Sparewise only offers to clear folders it knows by exact location, each with a written, tested reason why it rebuilds by itself. Everything else is reported, never removed.</p>
+<p><strong>Short answer:</strong> not by file type or by guessing. Sparewise only offers what comes back by itself, and tells you why for each one. Everything else is shown to you, never removed.</p>
 <h2>What it offers to clear</h2>
 <ul class="ticks">
 <li>Caches at known locations: npm, pnpm, Yarn, pip, uv, NuGet, Gradle, Maven, Cargo, Go, browser and editor caches, Windows temporary files and more.</li>
-<li>Each has a rule saying why it comes back by itself (the tool that made it downloads or rebuilds it when needed). The rules are covered by automated tests.</li>
-<li>Build folders inside your projects (node_modules, virtual environments, target, bin and obj) count only beside the project file of the tool that makes them, and never when git tracks any file in them: some projects commit their dist or vendor folder.</li>
-<li>No AI decides this. An assistant connected over MCP can suggest and plan, but the verdict is always the tested rule.</li>
+<li>Each one says in plain words why it is safe: the program that made it rebuilds or downloads it again when needed.</li>
+<li>Build folders inside your projects (node_modules, virtual environments, target, bin and obj) are offered only when they really are build output, never when they hold files you committed to git.</li>
+<li>No AI decides this. An assistant you connect can suggest and plan, but it can never make something count as safe.</li>
 </ul>
 <h2>What it never removes</h2>
 <p><a href="/folders/">See every folder it knows, with its verdict →</a></p>
@@ -33,7 +33,7 @@
 <h2>Checks before every change</h2>
 <ol>
 <li>The plan is shown to you first, with sizes. Nothing changes until you confirm (or, for an AI assistant, unless your own limits allow it).</li>
-<li>Right before each step runs, it is checked again: the path must still be exactly the known location, and the rule must still hold. If not, that step is refused.</li>
+<li>If anything changed since you looked, that item is left alone.</li>
 <li>Files a program has open are left where they are, and it tells you, so you can close the program and try again.</li>
 <li>Everything goes to the Recycle Bin or an undo window. If the Recycle Bin is turned off or too small for an item, Sparewise refuses rather than deleting.</li>
 <li>Afterwards it measures how much space was really freed.</li>
