@@ -14,7 +14,7 @@
 </header>
 <main><article>
 <h1>Every folder Sparewise knows</h1>
-<p><strong>107 folders</strong> on Windows. <strong>62</strong> are offered for clearing, because the program that made them rebuilds them when needed. The rest are reported so you know what they are, and Sparewise never removes them.</p>
+<p><strong>155 folders</strong> on Windows. <strong>87</strong> are offered for clearing, because the program that made them rebuilds them when needed. The rest are reported so you know what they are, and Sparewise never removes them.</p>
 <p class="meta">This list is generated from the same rules the app uses, so it is exactly what Sparewise does. Anything it offers goes to the Recycle Bin, never deleted permanently. See also <a href="/how-it-decides/">how it decides what is safe</a>.</p>
 
 <h2 id="packagecache">Package and build caches</h2>
@@ -44,14 +44,24 @@
 <p><code>%LocalAppData%\Google\Chrome\User Data\Default\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: saved web pages and images. Chrome downloads them again as you browse.</p>
 <p class="meta">Chrome limits its cache size by itself.</p>
+<h3 id="codex-runtimes">Codex app runtime</h3>
+<p><code>%UserProfile%\.cache\codex-runtimes</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Tools the Codex app downloaded to run. It belongs to the app; reinstalling Codex brings it back.</p>
 <h3 id="composer-cache">Composer cache</h3>
 <p><code>%LocalAppData%\Composer</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: PHP package downloads. They download again when needed.</p>
 <p class="meta">Its own command: <code>composer clear-cache</code></p>
+<h3 id="conan-cache">Conan packages</h3>
+<p><code>%UserProfile%\.conan2\p</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: C++ packages Conan downloaded or built. Conan gets them again when a project needs them.</p>
+<p class="meta">Its own command: <code>conan remove &quot;*&quot; -c</code></p>
 <h3 id="conda-pkgs">Conda packages</h3>
 <p><code>%UserProfile%\.conda\pkgs</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: Python and data-science package downloads. They download again when needed.</p>
 <p class="meta">Its own command: <code>conda clean --all</code></p>
+<h3 id="coursier-cache">Coursier cache (Scala)</h3>
+<p><code>%LocalAppData%\Coursier\cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: Scala libraries Coursier downloaded. They download again when a project builds.</p>
 <h3 id="crash-dumps">Crash dumps</h3>
 <p><code>%LocalAppData%\CrashDumps</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: records left by programs that crashed. Nothing uses them unless you report the crash.</p>
@@ -91,6 +101,10 @@
 <p><code>%AppData%\fnm\node-versions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Installed versions of Node.js. Remove versions you no longer use.</p>
 <p class="meta">Its own command: <code>fnm list</code></p>
+<h3 id="go-build-cache">Go build cache</h3>
+<p><code>%LocalAppData%\go-build</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: compiled Go code kept to make builds faster. Go builds it again when needed.</p>
+<p class="meta">Its own command: <code>go clean -cache</code></p>
 <h3 id="go-modcache">Go module cache</h3>
 <p><code>%UserProfile%\go\pkg\mod</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: Go package downloads. They download again on the next build.</p>
@@ -100,19 +114,41 @@
 <p><code>%UserProfile%\.gradle\caches</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: Java and Android build downloads. The next build fetches them again.</p>
 <p class="meta">Gradle removes downloaded resources unused for 30 days and created ones unused for 7, by default.</p>
+<h3 id="gradle-daemon">Gradle daemon logs</h3>
+<p><code>%UserProfile%\.gradle\daemon</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: log files from Gradle&#x27;s background build process. Gradle writes new ones as it runs.</p>
 <h3 id="gradle-wrapper-dists">Gradle wrapper downloads</h3>
 <p><code>%UserProfile%\.gradle\wrapper\dists</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: Gradle versions your projects downloaded. Each project downloads its version again on the next build.</p>
+<h3 id="hugo-cache">Hugo cache</h3>
+<p><code>%LocalAppData%\hugo_cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: modules and images Hugo downloaded or resized for your sites. Hugo makes them again on the next build.</p>
+<p class="meta">Its own command: <code>hugo mod clean --all</code></p>
 <h3 id="iphone-backups">iPhone and iPad backups (Apple Devices)</h3>
 <p><code>%UserProfile%\Apple\MobileSync\Backup</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Backups of your iPhone or iPad, with photos and messages. Old ones for phones you no longer have are often the biggest win.</p>
 <h3 id="iphone-backups-itunes">iPhone and iPad backups (iTunes)</h3>
 <p><code>%AppData%\Apple Computer\MobileSync\Backup</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Backups of your iPhone or iPad, with photos and messages. Old ones for phones you no longer have are often the biggest win.</p>
+<h3 id="ivy-cache">Ivy cache (sbt, Ant)</h3>
+<p><code>%UserProfile%\.ivy2\cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: Java and Scala libraries sbt or Ant downloaded. They download again when a project builds.</p>
+<h3 id="julia-compiled">Julia precompiled packages</h3>
+<p><code>%UserProfile%\.julia\compiled</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: Julia packages prepared to load faster. Your packages stay; the first load after is slower.</p>
+<h3 id="kubectl-cache">kubectl cache</h3>
+<p><code>%UserProfile%\.kube\cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: what kubectl learned about your clusters&#x27; APIs. It reads it again on the next command.</p>
+<h3 id="squirrel-temp">Leftover installer files</h3>
+<p><code>%LocalAppData%\SquirrelTemp</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: files app installers unpacked and left behind. They make new ones only while installing.</p>
 <h3 id="maven-repo">Maven repository</h3>
 <p><code>%UserProfile%\.m2\repository</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: Java libraries. The next build downloads the ones it needs.</p>
 <p class="meta">Maven keeps every downloaded artifact in ~/.m2 indefinitely.</p>
+<h3 id="node-gyp-cache">node-gyp headers</h3>
+<p><code>%LocalAppData%\node-gyp\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: Node.js headers used to build add-ons for Node. They download again when needed.</p>
 <h3 id="npm-cache">npm cache</h3>
 <p><code>%LocalAppData%\npm-cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: copies of JavaScript packages. They download again when a project needs them.</p>
@@ -139,11 +175,17 @@
 <p><code>%AppData%\nvm</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Installed versions of Node.js. Remove versions you no longer use.</p>
 <p class="meta">Its own command: <code>nvm list</code></p>
+<h3 id="outlook-mail">Outlook mail on this PC</h3>
+<p><code>%LocalAppData%\Microsoft\Outlook</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Outlook&#x27;s copy of your mailbox for working offline. Keep less mail offline in Outlook to make it smaller.</p>
 <h3 id="pip-cache">pip cache</h3>
 <p><code>%LocalAppData%\pip\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: copies of Python packages. They download again when needed.</p>
 <p class="meta">Its own command: <code>pip cache purge</code></p>
 <p class="meta">pip never prunes its cache by itself.</p>
+<h3 id="pipenv-cache">Pipenv cache</h3>
+<p><code>%LocalAppData%\pipenv\pipenv\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: Python packages Pipenv downloaded. They download again when needed.</p>
 <h3 id="pipx-venvs">pipx environments</h3>
 <p><code>%UserProfile%\.local\pipx</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Python programs you installed. Uninstall the ones you no longer use.</p>
@@ -157,10 +199,17 @@
 <p><code>%LocalAppData%\pypoetry\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: copies of Python packages. They download again when needed.</p>
 <p class="meta">Its own command: <code>poetry cache clear --all PyPI</code></p>
+<h3 id="pyenv-versions">pyenv Python versions</h3>
+<p><code>%UserProfile%\.pyenv\pyenv-win\versions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Python versions installed with pyenv. Remove the ones no project uses with pyenv uninstall.</p>
+<p class="meta">Its own command: <code>pyenv versions</code></p>
 <h3 id="recycle-bin">Recycle Bin</h3>
 <p><code>%SystemDrive%\$Recycle.Bin</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Files you already deleted. Empty it once you are sure you will not want them back.</p>
 <p class="meta">Its own command: <code>Clear-RecycleBin -Force</code></p>
+<h3 id="roblox-downloads">Roblox downloaded installers</h3>
+<p><code>%LocalAppData%\Roblox\Downloads</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Safe to clear: installers Roblox already used. Roblox stays installed and downloads again when it updates.</p>
 <h3 id="ruby-gems">Ruby gems</h3>
 <p><code>%UserProfile%\.gem</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Installed Ruby libraries. Uninstall the ones you no longer use.</p>
@@ -169,6 +218,9 @@
 <p><code>%UserProfile%\.rustup\toolchains</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Installed versions of the Rust language. Remove versions you no longer use.</p>
 <p class="meta">Its own command: <code>rustup toolchain list</code></p>
+<h3 id="sbt-boot">sbt launcher downloads</h3>
+<p><code>%UserProfile%\.sbt\boot</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: the parts sbt downloads to start. It downloads them again the next time it runs.</p>
 <h3 id="sccache">sccache</h3>
 <p><code>%LocalAppData%\Mozilla\sccache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: saved compiler results. Builds are slower until it refills.</p>
@@ -179,6 +231,9 @@
 <h3 id="slack-cache">Slack cache</h3>
 <p><code>%AppData%\Slack\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: Slack&#x27;s saved images and files. Your messages are kept on Slack&#x27;s servers.</p>
+<h3 id="spotify-cache">Spotify music cache</h3>
+<p><code>%LocalAppData%\Spotify\Storage</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Music Spotify keeps on this PC, including songs you downloaded. Clear it in Spotify: Settings, Storage.</p>
 <h3 id="steam-shadercache">Steam shader cache</h3>
 <p><code>%ProgramFiles(x86)%\Steam\steamapps\shadercache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: graphics Steam prepared for your games. Steam prepares them again; games may stutter briefly at first.</p>
@@ -197,6 +252,9 @@
 <p>Safe to clear: copies of Python packages. They download again when needed.</p>
 <p class="meta">Its own command: <code>uv cache clean</code></p>
 <p class="meta">uv keeps its cache until &#x27;uv cache prune&#x27; or &#x27;uv cache clean&#x27;.</p>
+<h3 id="vcpkg-archives">vcpkg binary cache</h3>
+<p><code>%LocalAppData%\vcpkg\archives</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: C++ libraries vcpkg already built, kept to save time. vcpkg builds them again when needed.</p>
 <h3 id="yarn-berry-cache">Yarn (Berry) cache</h3>
 <p><code>%LocalAppData%\Yarn\Berry\cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: copies of packages Yarn downloaded. They download again when needed.</p>
@@ -206,6 +264,15 @@
 <p>Safe to clear: copies of JavaScript packages. They download again when needed.</p>
 <p class="meta">Its own command: <code>yarn cache clean</code></p>
 <p class="meta">Yarn keeps every downloaded version until &#x27;yarn cache clean&#x27;.</p>
+<h3 id="zig-cache">Zig global cache</h3>
+<p><code>%LocalAppData%\zig</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: compiled Zig code kept to make builds faster. Zig builds it again when needed.</p>
+<h3 id="zoom-logs">Zoom logs</h3>
+<p><code>%AppData%\Zoom\logs</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: notes Zoom keeps about its own running. Zoom starts new ones; your meetings, chats and backgrounds are elsewhere.</p>
+<h3 id="zoom-reports">Zoom problem reports</h3>
+<p><code>%AppData%\Zoom\reports</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: reports Zoom wrote after it had a problem. Zoom does not need them again.</p>
 <h2 id="idecache">Editors, browsers and tools</h2>
 <h3 id="android-avd">Android emulators</h3>
 <p><code>%UserProfile%\.android\avd</code><br><strong>Reported only, never removed by Sparewise</strong></p>
@@ -252,6 +319,10 @@
 <h3 id="codex-desktop-logs">Codex app logs</h3>
 <p><code>%LocalAppData%\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\Codex\Logs</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: logs the Codex app writes while it runs. Close Codex first; it writes new ones.</p>
+<h3 id="codex-worktrees">Codex worktrees</h3>
+<p><code>%UserProfile%\.codex\worktrees</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Copies of your projects that Codex works in. One may hold changes not yet merged, so check before removing.</p>
+<p class="meta">Its own command: <code>git worktree list</code></p>
 <h3 id="continue-index">Continue code index</h3>
 <p><code>%UserProfile%\.continue\index</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: the index Continue builds of your code to search it. Continue builds it again when it next opens a project.</p>
@@ -261,6 +332,9 @@
 <h3 id="cursor-cached-data">Cursor code cache</h3>
 <p><code>%AppData%\Cursor\CachedData</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: code Cursor prepared to start faster. Close Cursor first; it makes it again.</p>
+<h3 id="cursor-extension-downloads">Cursor extension downloads</h3>
+<p><code>%AppData%\Cursor\CachedExtensionVSIXs</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: extension packages Cursor downloaded. Installed extensions stay; it downloads again what it needs.</p>
 <h3 id="cursor-extensions">Cursor extensions</h3>
 <p><code>%UserProfile%\.cursor\extensions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Add-ons installed in Cursor. Remove the ones you no longer use inside Cursor.</p>
@@ -268,18 +342,38 @@
 <p><code>%LocalAppData%\Cypress\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: test-runner downloads. They download again when tests run.</p>
 <p class="meta">Its own command: <code>npx cypress cache prune</code></p>
+<h3 id="eclipse-p2-pool">Eclipse shared plugins</h3>
+<p><code>%UserProfile%\.p2\pool</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Plugins shared by every Eclipse you installed. Remove an Eclipse you no longer use from its installer; do not delete this folder by hand.</p>
 <h3 id="flutter-sdk">Flutter SDK</h3>
 <p><code>%LocalAppData%\flutter</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>The Flutter development kit. Remove it only if you no longer build Flutter apps.</p>
+<h3 id="fvm-versions-home">Flutter versions (FVM, older)</h3>
+<p><code>%UserProfile%\fvm\versions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Flutter versions installed with an older FVM. Remove the ones no project uses; FVM can install them again.</p>
+<p class="meta">Its own command: <code>fvm list</code></p>
+<h3 id="fvm-versions">Flutter versions (FVM)</h3>
+<p><code>%LocalAppData%\fvm\versions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Flutter versions installed with FVM. Remove the ones no project uses; FVM can install them again.</p>
+<p class="meta">Its own command: <code>fvm list</code></p>
 <h3 id="gemini-cli-sessions">Gemini CLI sessions and checkpoints</h3>
 <p><code>%UserProfile%\.gemini\tmp</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Gemini CLI&#x27;s saved sessions and the checkpoints it uses to undo its edits. Keep the ones you may want to go back to.</p>
+<h3 id="gopls-cache">Go language server cache</h3>
+<p><code>%LocalAppData%\gopls</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: the index Go&#x27;s language server builds for your editor. It is rebuilt when you next open Go code.</p>
 <h3 id="godot-cache">Godot cache</h3>
 <p><code>%AppData%\Godot</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Godot editor data and templates. Remove versions you no longer use.</p>
 <h3 id="jetbrains-cache">JetBrains caches</h3>
 <p><code>%LocalAppData%\JetBrains</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Data for JetBrains editors such as IntelliJ, including older versions. Remove old versions from JetBrains Toolbox.</p>
+<h3 id="kiro-cache">Kiro cache</h3>
+<p><code>%AppData%\Kiro\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: temporary files of the Kiro editor. Close Kiro first; it makes them again.</p>
+<h3 id="kiro-cached-data">Kiro code cache</h3>
+<p><code>%AppData%\Kiro\CachedData</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: code Kiro prepared to start faster. Close Kiro first; it makes it again.</p>
 <h3 id="opencode-cache">OpenCode downloaded packages</h3>
 <p><code>%UserProfile%\.cache\opencode</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: packages OpenCode downloaded for its models and tools. It downloads them again when needed.</p>
@@ -296,6 +390,15 @@
 <h3 id="roo-code-tasks">Roo Code tasks and checkpoints (VS Code)</h3>
 <p><code>%AppData%\Code\User\globalStorage\rooveterinaryinc.roo-cline</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Your Roo Code tasks, chats and the checkpoints it uses to undo its edits. Remove old tasks from Roo Code&#x27;s history inside VS Code.</p>
+<h3 id="telegram-cache">Telegram downloaded media</h3>
+<p><code>%AppData%\Telegram Desktop\tdata\user_data</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Photos, videos and files Telegram downloaded from your chats. They stay in Telegram&#x27;s cloud and download again when opened.</p>
+<h3 id="trae-cache">Trae cache</h3>
+<p><code>%AppData%\Trae\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: temporary files of the Trae editor. Close Trae first; it makes them again.</p>
+<h3 id="trae-cached-data">Trae code cache</h3>
+<p><code>%AppData%\Trae\CachedData</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: code Trae prepared to start faster. Close Trae first; it makes it again.</p>
 <h3 id="typescript-cache">TypeScript typings cache</h3>
 <p><code>%LocalAppData%\Microsoft\TypeScript</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: type definitions VS Code downloaded for JavaScript help. They download again when needed.</p>
@@ -323,13 +426,31 @@
 <h3 id="vscode-extensions">VS Code extensions</h3>
 <p><code>%UserProfile%\.vscode\extensions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Add-ons installed in VS Code. Remove the ones you no longer use.</p>
+<h3 id="vscode-code-cache">VS Code script cache</h3>
+<p><code>%AppData%\Code\Code Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: scripts VS Code prepared to run faster. Close VS Code first; it makes them again.</p>
+<h3 id="windsurf-cache">Windsurf cache</h3>
+<p><code>%AppData%\Windsurf\Cache</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: temporary files of the Windsurf editor. Close Windsurf first; it makes them again.</p>
 <h3 id="windsurf-cached-data">Windsurf code cache</h3>
 <p><code>%AppData%\Windsurf\CachedData</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
 <p>Safe to clear: code Windsurf prepared to start faster. Close Windsurf first; it makes it again.</p>
+<h3 id="zed-languages">Zed language servers</h3>
+<p><code>%LocalAppData%\Zed\languages</code><br><strong style="color:var(--good)">Offered: rebuilds by itself</strong></p>
+<p>Safe to clear: language servers the Zed editor downloaded. Close Zed first; it downloads them again when needed.</p>
 <h2 id="aimodels">AI models</h2>
+<h3 id="antigravity-backup">Antigravity backup</h3>
+<p><code>%UserProfile%\.gemini\antigravity-backup</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>A backup Antigravity made of its data, including what it remembers of your chats. Keep it unless you are sure.</p>
 <h3 id="antigravity-browser-model">Antigravity browser&#x27;s on-device AI model</h3>
 <p><code>%UserProfile%\.gemini\antigravity-browser-profile\OptGuideOnDeviceModel</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>An AI model the browser Antigravity&#x27;s agent uses keeps on this PC. The browser downloads it again when its AI features need it.</p>
+<h3 id="anythingllm-storage">AnythingLLM models and documents</h3>
+<p><code>%AppData%\anythingllm-desktop\storage</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>AnythingLLM&#x27;s models, your uploaded documents and their search index. Remove what you no longer use from inside AnythingLLM.</p>
+<h3 id="chroma-models">Chroma embedding models</h3>
+<p><code>%UserProfile%\.cache\chroma</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>The model ChromaDB uses to compare texts. It downloads it again the next time it needs it.</p>
 <h3 id="claude-desktop-vm">Claude app VM bundles</h3>
 <p><code>%AppData%\Claude\vm_bundles</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Files the Claude app uses to run its helper safely on your computer. They belong to the app.</p>
@@ -337,34 +458,64 @@
 <p><code>%UserProfile%\.claude\projects</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Your Claude Code conversations. Claude Code removes old ones by itself.</p>
 <p class="meta">Claude Code deletes conversations older than 30 days by itself (the cleanupPeriodDays setting).</p>
+<h3 id="codex-archived-sessions">Codex archived conversations</h3>
+<p><code>%UserProfile%\.codex\archived_sessions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Codex conversations you archived. Keep the ones you may want to look back at.</p>
 <h3 id="codex-sessions">Codex conversation history</h3>
 <p><code>%UserProfile%\.codex\sessions</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Your Codex conversations. Keep the ones you may want to look back at.</p>
 <h3 id="comfyui-models">ComfyUI models</h3>
 <p><code>%UserProfile%\ComfyUI\models</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Image-generation models for ComfyUI. Remove the ones you no longer use.</p>
+<h3 id="cursor-chat-state">Cursor chat history and settings</h3>
+<p><code>%AppData%\Cursor\User\globalStorage</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Your Cursor chats and settings, plus a backup of the same size. It grows with every chat; delete old chats inside Cursor.</p>
+<h3 id="copilot-chat-storage">GitHub Copilot Chat data</h3>
+<p><code>%AppData%\Code\User\globalStorage\github.copilot-chat</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>What GitHub Copilot Chat keeps in VS Code: search indexes and its agents&#x27; saved work. Manage it inside VS Code.</p>
+<h3 id="gpt4all-models">GPT4All models</h3>
+<p><code>%LocalAppData%\nomic.ai\GPT4All</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>AI models you downloaded in GPT4All. Remove the ones you no longer use from GPT4All&#x27;s Models page; each can be downloaded again.</p>
 <h3 id="huggingface-hub">Hugging Face cache</h3>
 <p><code>%UserProfile%\.cache\huggingface\hub</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>AI models and datasets from Hugging Face. Remove ones you no longer use; they can be downloaded again.</p>
 <p class="meta">Its own command: <code>huggingface-cli delete-cache</code></p>
 <p class="meta">Hugging Face never evicts downloaded models.</p>
+<h3 id="jan-data">Jan models and chats</h3>
+<p><code>%AppData%\Jan\data</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>AI models you downloaded in Jan, and your Jan chats. Remove models you no longer use from Jan&#x27;s Settings &gt; Model Providers.</p>
 <h3 id="gguf-cache">llama.cpp models</h3>
 <p><code>%UserProfile%\.cache\llama.cpp</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>AI models downloaded by llama.cpp. Remove the ones you no longer use.</p>
 <h3 id="lmstudio-models">LM Studio models</h3>
 <p><code>%UserProfile%\.cache\lm-studio\models</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>AI models you downloaded in LM Studio. Remove the ones you no longer use.</p>
+<h3 id="lmstudio-models-home">LM Studio models</h3>
+<p><code>%UserProfile%\.lmstudio\models</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>AI models you downloaded in LM Studio. Remove the ones you no longer use.</p>
+<h3 id="msty-models">Msty models</h3>
+<p><code>%AppData%\Msty\models</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>AI models you downloaded in Msty. Remove the ones you no longer use from Msty&#x27;s model manager; each can be downloaded again.</p>
 <h3 id="ollama-models">Ollama models</h3>
 <p><code>%UserProfile%\.ollama\models</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>AI models you downloaded for Ollama. Remove the ones you no longer use; each can be downloaded again.</p>
 <p class="meta">Its own command: <code>ollama list</code></p>
 <p class="meta">Ollama keeps models until &#x27;ollama rm&#x27;.</p>
+<h3 id="pinokio-home">Pinokio AI apps</h3>
+<p><code>%UserProfile%\pinokio</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>AI apps installed through Pinokio, each with its own Python and models. Delete the apps you no longer use from Pinokio&#x27;s home screen.</p>
 <h3 id="torch-cache">PyTorch hub cache</h3>
 <p><code>%UserProfile%\.cache\torch</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>AI models downloaded by PyTorch programs. They download again, slowly, if needed.</p>
 <h3 id="automatic1111-models">Stable Diffusion models</h3>
 <p><code>%UserProfile%\stable-diffusion-webui\models</code><br><strong>Reported only, never removed by Sparewise</strong></p>
 <p>Image-generation models for Stable Diffusion. Remove the ones you no longer use.</p>
+<h3 id="whisper-models">Whisper speech models</h3>
+<p><code>%UserProfile%\.cache\whisper</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Speech-to-text models Whisper downloaded. Remove ones you no longer use; Whisper downloads a model again when needed.</p>
+<h3 id="windows-recall">Windows Recall snapshots</h3>
+<p><code>%LocalAppData%\CoreAIPlatform.00\UKP</code><br><strong>Reported only, never removed by Sparewise</strong></p>
+<p>Pictures Windows Recall took of your screen, so you can find things again. Delete or limit them in Windows&#x27; Recall settings.</p>
 <h2 id="containers">Containers and virtual disks</h2>
 <h3 id="docker-wsl">Docker Desktop data</h3>
 <p><code>%LocalAppData%\Docker\wsl</code><br><strong>Reported only, never removed by Sparewise</strong></p>
