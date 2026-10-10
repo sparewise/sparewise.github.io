@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparewise for teams and schools | Sparewise</title>
+<meta name="description" content="Keep many Windows PCs from running out of space: one policy, a status report per machine in a folder you control, and one readable summary. No cloud, no telemetry.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="/how-it-decides/">How it decides</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>Sparewise for teams and schools</h1>
+<p><strong>Full drives stop work:</strong> updates fail, builds break, students lose an hour. Sparewise keeps an eye on every PC and tells whoever looks after them which machines need attention first, without a server, an account or any data leaving your network.</p>
+
+<h2>What you get</h2>
+<ul class="ticks">
+<li><strong>One list of every machine,</strong> most in need first: free space, when the drive may be full, how much could be freed safely, and machines that stopped reporting.</li>
+<li><strong>One policy for everyone:</strong> how much may be freed without asking, which kinds of change are allowed, and folders never touched.</li>
+<li><strong>Nothing leaves your network:</strong> each PC writes its own report into a folder you choose, such as a network share.</li>
+<li><strong>Safe by default:</strong> without a policy, nothing runs without a person confirming, and everything removed can be put back.</li>
+</ul>
+
+<h2>Set it up in four steps</h2>
+<h3>1. Install</h3>
+<p>From the <a href="https://apps.microsoft.com/detail/9NHXHFH3CF1B">Microsoft Store</a> (in Intune: add a <em>Microsoft Store app (new)</em> and search for Sparewise), or with the <a href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">installer</a>, which installs for each user and needs no administrator rights. The command line comes with the direct install at <code>%LocalAppData%\Sparewise\current\sparewise.exe</code>.</p>
+
+<h3>2. Set the policy (optional)</h3>
+<p>Copy one file, <code>policy.json</code>, to <code>%LocalAppData%\DevStorage\</code> on each PC, for example with an Intune script or a logon script. A value Sparewise would reject makes it fall back to the safe default, so a mistake never widens what it may do.</p>
+<pre>{
+  "allowUnattendedReversible": true,
+  "maxUnattendedBytes": 21474836480,
+  "unattendedActions": [ "clean-junk" ],
+  "excludedPaths": [ "D:\\Coursework" ]
+}</pre>
+
+<h3>3. Let each PC report</h3>
+<p>Run once per user; Windows Task Scheduler then writes the report every day at 09:00, with no administrator rights:</p>
+<pre>sparewise report --to \\server\sparewise-reports --schedule daily</pre>
+
+<h3>4. Read the summary</h3>
+<p>One line per machine in the terminal, or a web page to open, email or put on your intranet:</p>
+<pre>sparewise report --summary \\server\sparewise-reports --html fleet-report.html</pre>
+<figure class="shot"><img src="/img/fleet-report.png" width="1200" height="480" loading="lazy" alt="The fleet report: machines reporting, how many need attention, how much could be freed in total, and every machine with its free space"></figure>
+
+<h2>Questions</h2>
+<h3>Does any data go to Sparewise?</h3>
+<p>No. Reports are plain files in the folder you choose. Nothing is sent to us or anyone else. See <a href="/privacy/">privacy</a>.</p>
+<h3>Can an AI assistant help manage the machines?</h3>
+<p>Yes: connected over MCP, an assistant can read the same summary and plan clean-ups, only within the policy you set, and every change it makes is recorded and can be undone.</p>
+<h3>What does it cost?</h3>
+<p>Sparewise is free today, for any number of machines.</p>
+</article></main>
+<footer>
+  <a href="/">Home</a>
+  <a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a>
+  <a href="https://github.com/sparewise/sparewise/discussions">Questions</a>
+  <a href="/privacy/">Privacy</a>
+  <p>© 2026 Sparewise. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

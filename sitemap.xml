@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sparewise.app/</loc></url>
+  <url><loc>https://sparewise.app/teams/</loc></url>
   <url><loc>https://sparewise.app/docker-disk-space/</loc></url>
   <url><loc>https://sparewise.app/ai-models-disk-space/</loc></url>
   <url><loc>https://sparewise.app/developer-caches/</loc></url>
