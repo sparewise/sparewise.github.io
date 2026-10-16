@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WinSxS folder too big? How to shrink it safely | Sparewise</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<meta name="description" content="What the WinSxS folder is, why Explorer shows it bigger than it really is, and the safe Windows command that shrinks it.">
+<!-- seo:start -->
+<link rel="canonical" href="https://sparewise.app/winsxs-folder-too-big/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sparewise">
+<meta property="og:title" content="WinSxS folder too big? How to shrink it safely | Sparewise">
+<meta property="og:description" content="What the WinSxS folder is, why Explorer shows it bigger than it really is, and the safe Windows command that shrinks it.">
+<meta property="og:url" content="https://sparewise.app/winsxs-folder-too-big/">
+<meta property="og:image" content="https://sparewise.app/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sparewise: see why your drive is full. Free space safely.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sparewiseapp">
+<meta name="twitter:title" content="WinSxS folder too big? How to shrink it safely | Sparewise">
+<meta name="twitter:description" content="What the WinSxS folder is, why Explorer shows it bigger than it really is, and the safe Windows command that shrinks it.">
+<meta name="twitter:image" content="https://sparewise.app/img/og-image.png">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The WinSxS folder is huge: can you shrink it?","description":"What the WinSxS folder is, why Explorer shows it bigger than it really is, and the safe Windows command that shrinks it.","url":"https://sparewise.app/winsxs-folder-too-big/","inLanguage":"en","image":"https://sparewise.app/img/og-image.png","dateModified":"2026-10-16","author":{"@type":"Person","name":"aiagenticdeveloper"},"publisher":{"@type":"Organization","name":"Sparewise","logo":{"@type":"ImageObject","url":"https://sparewise.app/img/icon-512.png"}},"about":{"@type":"SoftwareApplication","name":"Sparewise","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Sparewise","item":"https://sparewise.app/"},{"@type":"ListItem","position":2,"name":"The WinSxS folder is huge: can you shrink it?","item":"https://sparewise.app/winsxs-folder-too-big/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I delete the WinSxS folder?","acceptedAnswer":{"@type":"Answer","text":"No. Windows needs it for updates and repairs, and deleting it can break the PC. Use the DISM cleanup command."}},{"@type":"Question","name":"Why does WinSxS look so big?","acceptedAnswer":{"@type":"Answer","text":"Explorer counts files that are shared with the rest of Windows, so the real extra space is usually much smaller."}}]}</script>
+<!-- seo:end -->
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="/guides/">Guides</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>The WinSxS folder is huge: can you shrink it?</h1>
+<p><strong>Short answer:</strong> WinSxS holds the Windows components that updates and repairs need. Never delete files from it by hand. Explorer overstates its size, because many files in it are also used from other places (hard links). Windows has its own command to remove old, replaced components.</p>
+<h2>By hand, with Windows' own tools</h2>
+<ol>
+<li>Open Terminal as administrator.</li>
+<li>See its real size: <code>Dism.exe /Online /Cleanup-Image /AnalyzeComponentStore</code></li>
+<li>Remove old component versions: <code>Dism.exe /Online /Cleanup-Image /StartComponentCleanup</code></li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Shows WinSxS as part of Windows itself, not as something to delete.</li>
+<li>Points to the Windows command instead of touching system files.</li>
+</ul>
+<h2>Questions</h2>
+<details><summary>Can I delete the WinSxS folder?</summary><p>No. Windows needs it for updates and repairs, and deleting it can break the PC. Use the DISM cleanup command.</p></details>
+<details><summary>Why does WinSxS look so big?</summary><p>Explorer counts files that are shared with the rest of Windows, so the real extra space is usually much smaller.</p></details>
+<h2>Get Sparewise, free</h2>
+<p><a class="button" href="https://apps.microsoft.com/detail/9NHXHFH3CF1B">Get it from the Microsoft Store</a> &nbsp; <a href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">or download the installer</a></p>
+<p class="meta">Free · Windows 10 and 11 · No account · No telemetry · Everything it removes can be put back</p>
+<p>More guides: <a href="/guides/">all guides</a></p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="/guides/">Guides</a><a href="/privacy/">Privacy</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a>
+  <p>© 2026 aiagenticdeveloper. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

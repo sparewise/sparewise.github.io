@@ -25,6 +25,10 @@
 - [Why is my PC slow? An honest answer](https://sparewise.app/why-is-my-pc-slow/): The real reasons a Windows PC feels slow (full drive, startup programs, pending restart, memory) and the plain fix for each. No RAM booster tricks.
 - [OneDrive is taking up space on my PC](https://sparewise.app/onedrive-taking-space/): How to stop OneDrive keeping a copy of every file on your PC with Files On-Demand, without losing any files.
 - [Games are taking all my disk space](https://sparewise.app/steam-games-disk-space/): How much space Steam, Epic and Xbox games use, which game files are safe to clear (shader caches), and how to move or remove games properly.
+- [The WinSxS folder is huge: can you shrink it?](https://sparewise.app/winsxs-folder-too-big/): What the WinSxS folder is, why Explorer shows it bigger than it really is, and the safe Windows command that shrinks it.
+- [What is pagefile.sys?](https://sparewise.app/pagefile-sys/): What the pagefile.sys file is, why it is big, and how to resize or move it safely instead of deleting it.
+- [Can I delete the Windows.old folder?](https://sparewise.app/windows-old/): What Windows.old is, when it is safe to remove, and how to remove it with Windows Settings.
+- [What are Delivery Optimization files?](https://sparewise.app/delivery-optimization-files/): What Windows Delivery Optimization files are, whether they are safe to delete, and how to clear and limit them.
 - [Docker is using too much disk space on Windows](https://sparewise.app/docker-disk-space/)
 - [WSL is using too much disk space](https://sparewise.app/wsl-disk-space/)
 - [AI models are filling my drive](https://sparewise.app/ai-models-disk-space/)
