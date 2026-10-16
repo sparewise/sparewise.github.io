@@ -15,8 +15,8 @@ header { position: sticky; top: 0; z-index: 20; max-width: none; display: flex; 
          border-bottom: 1px solid rgba(15,23,42,.06); padding: 0 max(24px, calc((100% - 1132px) / 2)); }
 header .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: var(--text); text-decoration: none; }
 header .brand::before { content: ""; width: 30px; height: 30px; border-radius: 9px;
-         background: conic-gradient(from 200deg, #16a34a 0 34%, #2563eb 0 66%, #0ea5e9 0 84%, #cbd5e1 0);
-         box-shadow: inset 0 0 0 7px #fff, 0 2px 8px rgba(37,99,235,.25); }
+         background: url(/img/logo-64.png) center/cover no-repeat;
+         box-shadow: 0 2px 8px rgba(0,0,0,.18); }
 header nav a { margin-left: 26px; color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; }
 header nav a:hover { color: var(--text); }
 
