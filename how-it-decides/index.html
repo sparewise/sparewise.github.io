@@ -60,6 +60,9 @@
 <li>Files a program has open are left where they are, and it tells you, so you can close the program and try again.</li>
 <li>Everything goes to the Recycle Bin or is set aside. If the Recycle Bin is turned off or too small for an item, Sparewise refuses rather than deleting.</li>
 <li>Afterwards it measures how much space was really freed.</li>
+<li>Keys, certificates, password vaults and credential files (.env, .pem, SSH keys, .ssh, .aws and similar) are never removed, and a folder holding one stays.</li>
+<li>If the PC crashes or loses power in the middle of setting something aside, the next start works out what moved and puts every file back on the list to restore. Nothing is left half-gone.</li>
+<li>These rules are checked by more than 1,800 automated tests before every release, including tests for crashes halfway through, files in use, links and folders that changed.</li>
 </ol>
 <h2>AI assistants</h2>
 <p>Over MCP an assistant gets the same rules plus your own limits: a size cap, which kinds of change it may make alone, and folders it must never touch. It can never delete permanently, and every change it makes is recorded with its name and reason and can be undone.</p>
