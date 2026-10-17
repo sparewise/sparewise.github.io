@@ -7,13 +7,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<meta name="description" content="Free Windows app that shows why your C: drive is full and frees space safely: caches, temp files, Windows Update leftovers, games, Docker and WSL disks, local AI models. Asks first, undo for everything. No account, no telemetry.">
+<meta name="description" content="Free PC cleaner for Windows 10 and 11: shows why your C: drive is full and frees space safely (temp files, browser caches, Windows Update leftovers, big files, duplicates, games, developer caches and AI models), and checks crashes and battery health. Asks before every change; most changes can be put back. No account, no telemetry.">
 <!-- seo:start -->
 <link rel="canonical" href="https://sparewise.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sparewise">
 <meta property="og:title" content="Sparewise: see why your Windows drive is full, and free space safely">
-<meta property="og:description" content="Free Windows app that shows why your C: drive is full and frees space safely: caches, temp files, Windows Update leftovers, games, Docker and WSL disks, local AI models. Asks first, undo for everything. No account, no telemetry.">
+<meta property="og:description" content="Free PC cleaner for Windows 10 and 11: shows why your C: drive is full and frees space safely (temp files, browser caches, Windows Update leftovers, big files, duplicates, games, developer caches and AI models), and checks crashes and battery health. Asks before every change; most changes can be put back. No account, no telemetry.">
 <meta property="og:url" content="https://sparewise.app/">
 <meta property="og:image" content="https://sparewise.app/img/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -22,10 +22,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@sparewiseapp">
 <meta name="twitter:title" content="Sparewise: see why your Windows drive is full, and free space safely">
-<meta name="twitter:description" content="Free Windows app that shows why your C: drive is full and frees space safely: caches, temp files, Windows Update leftovers, games, Docker and WSL disks, local AI models. Asks first, undo for everything. No account, no telemetry.">
+<meta name="twitter:description" content="Free PC cleaner for Windows 10 and 11: shows why your C: drive is full and frees space safely (temp files, browser caches, Windows Update leftovers, big files, duplicates, games, developer caches and AI models), and checks crashes and battery health. Asks before every change; most changes can be put back. No account, no telemetry.">
 <meta name="twitter:image" content="https://sparewise.app/img/og-image.png">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sparewise","url":"https://sparewise.app/","description":"Free Windows app that shows why your C: drive is full and frees space safely: caches, temp files, Windows Update leftovers, games, Docker and WSL disks, local AI models. Asks first, undo for everything. No account, no telemetry.","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://apps.microsoft.com/detail/9NHXHFH3CF1B","installUrl":"https://apps.microsoft.com/detail/9NHXHFH3CF1B","image":"https://sparewise.app/img/icon-512.png","screenshot":"https://sparewise.app/img/og-image.png","sameAs":["https://github.com/sparewise/sparewise","https://apps.microsoft.com/detail/9NHXHFH3CF1B","https://www.youtube.com/@user-ml6nv3ij7w","https://www.tiktok.com/@sparewiseapp","https://www.instagram.com/sparewise/","https://x.com/sparewiseapp"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sparewise","url":"https://sparewise.app/","description":"Free PC cleaner for Windows 10 and 11: shows why your C: drive is full and frees space safely (temp files, browser caches, Windows Update leftovers, big files, duplicates, games, developer caches and AI models), and checks crashes and battery health. Asks before every change; most changes can be put back. No account, no telemetry.","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://apps.microsoft.com/detail/9NHXHFH3CF1B","installUrl":"https://apps.microsoft.com/detail/9NHXHFH3CF1B","image":"https://sparewise.app/img/icon-512.png","screenshot":"https://sparewise.app/img/og-image.png","sameAs":["https://github.com/sparewise/sparewise","https://apps.microsoft.com/detail/9NHXHFH3CF1B","https://www.youtube.com/@user-ml6nv3ij7w","https://www.tiktok.com/@sparewiseapp","https://www.instagram.com/sparewise/","https://x.com/sparewiseapp"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sparewise","url":"https://sparewise.app/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who makes Sparewise?","acceptedAnswer":{"@type":"Answer","text":"One independent developer, not a company. It is published as an individual on the Microsoft Store and on GitHub, and it is free: no account, no ads, no tracking."}},{"@type":"Question","name":"Does it send anything anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. No telemetry, no analytics, no account. It checks GitHub for updates and reaches only what you ask it to. See the privacy page."}},{"@type":"Question","name":"Why does Windows warn when I run the installer?","acceptedAnswer":{"@type":"Answer","text":"It is new and not code-signed yet. The Microsoft Store copy installs with no warning. With the installer, choose More info, then Run anyway."}},{"@type":"Question","name":"Mac or Linux?","acceptedAnswer":{"@type":"Answer","text":"Windows 10 and 11 only, for now. There is no Mac or Linux version yet."}}]}</script>
 <!-- seo:end -->
@@ -217,8 +217,8 @@ footer nav a:hover{color:var(--text)}
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="wrap">
     <a class="pill" href="#features"><span>Hibernate old projects, find packages kept twice</span><b>NEW</b></a>
-    <h1>Free gigabytes your tools<br><span>quietly left behind.</span></h1>
-    <p class="lead">Sparewise shows why your Windows drive is full: package caches, local AI models, Docker and WSL disks, forgotten projects. It explains every item, frees space only when you say so, and can put back anything it moved.</p>
+    <h1>C: drive full?<br><span>See why, and free space safely.</span></h1>
+    <p class="lead">A free, honest PC cleaner for everyone: temp files, browser caches, Windows leftovers, big and duplicate files, programs you no longer use, and the caches developer and AI tools leave behind. It explains every item, changes nothing until you say so, and most changes can be put back. It also tells you if your PC has been crashing or your battery is worn.</p>
     <div class="cta">
       <a class="btn primary" href="https://apps.microsoft.com/detail/9NHXHFH3CF1B"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10 4.5v7H3zM11 4.4 21 3v8.5H11zM3 12.5h7v7L3 18.5zM11 12.5h10V21l-10-1.4z"/></svg>Get it from the Microsoft Store</a>
       <a class="btn light" href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">Download the installer</a>
@@ -232,7 +232,7 @@ footer nav a:hover{color:var(--text)}
     <div class="stage">
       <div class="window"><div class="bar"><i></i><i></i><i></i></div><img src="/img/home.png" width="1280" height="860" alt="Sparewise Home: the drive in parts and how much can be freed safely"></div>
       <div class="chip c1"><span class="i" style="background:var(--green-l);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-10"/></svg></span><div><b>25.7 GB safe to clear</b><span>Rebuilds by itself</span></div></div>
-      <div class="chip c2"><span class="i" style="background:var(--blue-l);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><div><b>Undo for everything</b><span>Recycle Bin or Set aside</span></div></div>
+      <div class="chip c2"><span class="i" style="background:var(--blue-l);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><div><b>Put things back</b><span>Recycle Bin or Set aside</span></div></div>
       <div class="chip c3"><span class="i" style="background:var(--violet-l);color:var(--violet)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="5" rx="1.5"/><path d="M5 9v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"/></svg></span><div><b>13 GB in idle projects</b><span>Clear or hibernate</span></div></div>
     </div>
   </div>
@@ -294,7 +294,7 @@ footer nav a:hover{color:var(--text)}
     <div class="step"><b>Looking changes nothing</b><span>A scan never moves, changes or deletes anything.</span></div>
     <div class="step"><b>You see the plan first</b><span>What will be cleared, how big it is, and why it is safe.</span></div>
     <div class="step"><b>Nothing changes behind your back</b><span>If anything changed since you looked, that item is left alone.</span></div>
-    <div class="step"><b>Everything can be put back</b><span>It goes to the Recycle Bin or is set aside, and you see what was really freed.</span></div>
+    <div class="step"><b>Most changes can be put back</b><span>Items go to the Recycle Bin or are set aside, and you see what was really freed.</span></div>
   </div>
 </div></section>
 
@@ -324,7 +324,7 @@ claude mcp add sparewise -- npx -y sparewise mcp
   <table class="cmp">
     <tr><th>What matters</th><th class="us">Sparewise</th><th>Typical cleaner</th></tr>
     <tr><td>Developer and AI caches, model folders, WSL and Docker</td><td class="y">Each one named and sized</td><td class="n">Rarely</td></tr>
-    <tr><td>Undo for everything it removes</td><td class="y">Recycle Bin or Set aside</td><td class="n">Often permanent</td></tr>
+    <tr><td>Can put back what it removes</td><td class="y">Recycle Bin or Set aside</td><td class="n">Often permanent</td></tr>
     <tr><td>Why each item is safe</td><td class="y">Explained in plain words</td><td class="n">"Junk"</td></tr>
     <tr><td>Old projects and duplicate packages</td><td class="y">Clear, hibernate, measure</td><td class="n">No</td></tr>
     <tr><td>AI agents under your policy</td><td class="y">MCP, audited, reversible</td><td class="n">No</td></tr>
