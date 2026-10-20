@@ -64,6 +64,14 @@
 <li>If the PC crashes or loses power in the middle of setting something aside, the next start works out what moved and puts every file back on the list to restore. Nothing is left half-gone.</li>
 <li>These rules are checked by more than 1,800 automated tests before every release, including tests for crashes halfway through, files in use, links and folders that changed.</li>
 </ol>
+<h2>How each release is checked</h2>
+<ol>
+<li>The full set of automated tests runs on the release build, and a release does not go out while any test fails.</li>
+<li>The built app is started before it is packaged; if it closes by itself, the build stops.</li>
+<li>It is installed fresh on a clean Windows 11 test machine and every page is opened, read-only, to see that each one loads.</li>
+<li>Every read-only command is run and timed on a developer PC with a large drive, so slow pages are found before people meet them.</li>
+<li>Updates are checked end to end: a copy one version behind downloads the new one, shows Restart to update, and opens again on the new version.</li>
+</ol>
 <h2>AI assistants</h2>
 <p>Over MCP an assistant gets the same rules plus your own limits: a size cap, which kinds of change it may make alone, and folders it must never touch. It can never delete permanently, and every change it makes is recorded with its name and reason and can be undone.</p>
 <h2>Try it</h2>
