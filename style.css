@@ -15,7 +15,7 @@ header { position: sticky; top: 0; z-index: 20; max-width: none; display: flex; 
          border-bottom: 1px solid rgba(15,23,42,.06); padding: 0 max(24px, calc((100% - 1132px) / 2)); }
 header .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: var(--text); text-decoration: none; }
 header .brand::before { content: ""; width: 30px; height: 30px; border-radius: 9px;
-         background: url(/img/logo-64.png) center/cover no-repeat;
+         background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231f2329'/><rect x='12' y='14' width='40' height='7' rx='3.5' fill='%233b82f6'/><rect x='12' y='25' width='30' height='7' rx='3.5' fill='%23f59e0b'/><rect x='12' y='36' width='22' height='7' rx='3.5' fill='%2334d399'/><rect x='12' y='47' width='12' height='5' rx='2.5' fill='%239ca3af'/></svg>") center/cover no-repeat;
          box-shadow: 0 2px 8px rgba(0,0,0,.18); }
 header nav a { margin-left: 26px; color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; }
 header nav a:hover { color: var(--text); }
@@ -58,3 +58,4 @@ footer .official { flex-basis: 100%; margin: 12px 0 0; font-size: 13px; }
 footer .official a { margin-right: 0; text-decoration: underline; }
 
 @media (max-width: 700px) { header nav a { margin-left: 16px; font-size: 14px; } }
+

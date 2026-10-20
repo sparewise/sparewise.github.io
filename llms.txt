@@ -1,6 +1,6 @@
 # Sparewise
 
-> Sparewise is a free Windows 10 and 11 app that shows why the drive is full and frees space safely. It is a cache cleaner and storage analyzer with AI agent support (an MCP server for Claude, Codex, Cursor). No account, no telemetry. It explains every item in plain words, asks before every change, and what it removes goes to the Recycle Bin or is set aside for 14 days so it can be put back. Delete decisions are rule-based, never made by AI. Available in 30 languages.
+> Sparewise is a free Windows 10 and 11 app that shows why the drive is full and helps you free space. It is a cache cleaner and storage analyzer with AI agent support (an MCP server for Claude, Codex, Cursor). No account, no telemetry. It explains every item in plain words, asks before every change, and what it removes goes to the Recycle Bin or is set aside for 14 days so it can be put back. Delete decisions are rule-based, never made by AI. Available in 30 languages.
 
 - Get it: [Microsoft Store](https://apps.microsoft.com/detail/9NHXHFH3CF1B) or [installer](https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe)
 - Source of releases: [GitHub](https://github.com/sparewise/sparewise)
@@ -16,7 +16,7 @@
 - Why the PC is slow: full drive, startup programs, pending restart, real memory shortage (no RAM booster tricks)
 
 ## Guides
-- [C: drive full on Windows 11? Free up space safely](https://sparewise.app/c-drive-full-windows-11/): Why the C: drive fills up on Windows 11 and 10, what is safe to delete, what is not, and how to free space without losing files.
+- [C: drive full on Windows 11? Free up space, step by step](https://sparewise.app/c-drive-full-windows-11/): Why the C: drive fills up on Windows 11 and 10, what is safe to delete, what is not, and how to free space without losing files.
 - [How to clear cache on Windows 11](https://sparewise.app/clear-cache-windows-11/): Which caches on Windows 11 are safe to clear, how to clear each one, and how much space it gives back.
 - [Is it safe to delete the Temp folder?](https://sparewise.app/delete-temp-files-windows/): What the Windows Temp folder is, which temp files are safe to delete, and how to clear them without breaking open programs.
 - [Windows Update says there is not enough space](https://sparewise.app/windows-update-not-enough-space/): What to clear when Windows Update fails for lack of space on the C: drive, safely and without deleting system files.
