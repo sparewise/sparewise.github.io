@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AppData folder too big? What is in it and what you can clear | Sparewise</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<meta name="description" content="What fills the hidden AppData folder on Windows, which parts are caches that usually rebuild by themselves, and which hold your settings and data.">
+<!-- seo:start -->
+<link rel="canonical" href="https://sparewise.app/appdata-folder-too-big/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sparewise">
+<meta property="og:title" content="AppData folder too big? What is in it and what you can clear | Sparewise">
+<meta property="og:description" content="What fills the hidden AppData folder on Windows, which parts are caches that usually rebuild by themselves, and which hold your settings and data.">
+<meta property="og:url" content="https://sparewise.app/appdata-folder-too-big/">
+<meta property="og:image" content="https://sparewise.app/img/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sparewise: see why your drive is full. You approve every change.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sparewiseapp">
+<meta name="twitter:title" content="AppData folder too big? What is in it and what you can clear | Sparewise">
+<meta name="twitter:description" content="What fills the hidden AppData folder on Windows, which parts are caches that usually rebuild by themselves, and which hold your settings and data.">
+<meta name="twitter:image" content="https://sparewise.app/img/og-image.png?v=2">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Why is my AppData folder so big?","description":"What fills the hidden AppData folder on Windows, which parts are caches that usually rebuild by themselves, and which hold your settings and data.","url":"https://sparewise.app/appdata-folder-too-big/","inLanguage":"en","image":"https://sparewise.app/img/og-image.png?v=2","dateModified":"2026-10-23","author":{"@type":"Person","name":"the Sparewise developer"},"publisher":{"@type":"Organization","name":"Sparewise","url":"https://sparewise.app/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Sparewise","item":"https://sparewise.app/"},{"@type":"ListItem","position":2,"name":"Why is my AppData folder so big?","item":"https://sparewise.app/appdata-folder-too-big/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I delete the whole AppData folder?","acceptedAnswer":{"@type":"Answer","text":"No. Programs keep their settings and data there; deleting it can reset or break them."}},{"@type":"Question","name":"Why does AppData fill up again?","acceptedAnswer":{"@type":"Answer","text":"Caches grow back as you use your programs. That is normal; they are clearing space only until the program needs it again."}}]}</script>
+<!-- seo:end -->
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="/guides/">Guides</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>Why is my AppData folder so big?</h1>
+<p><strong>Short answer:</strong> AppData holds every program's settings, data and caches. Caches (browser, app and developer tool caches) usually rebuild by themselves and are the parts people clear. Settings, saved games, mail and chat history also live there and must stay.</p>
+<h2>By hand, with Windows' own tools</h2>
+<ol>
+<li>Open File Explorer and type <code>%LocalAppData%</code> in the address bar. Most of the size is usually here; <code>%AppData%</code> (Roaming) holds settings.</li>
+<li>Look for folders named <strong>Cache</strong>, <strong>Code Cache</strong> or <strong>GPUCache</strong> inside a program's folder. Close that program first.</li>
+<li>Clear a browser's cache from the browser's own settings (Settings > Privacy > Clear browsing data), so your passwords and history stay.</li>
+<li>Do not delete whole program folders: they can hold settings, accounts, saved games or mail.</li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Lists the caches inside AppData by program, with their sizes, and says which usually rebuild by themselves.</li>
+<li>Offers only those caches; your settings and data folders are not offered.</li>
+<li>Items go to the Recycle Bin or are set aside, so most changes can be put back.</li>
+</ul>
+<h2>Questions</h2>
+<details><summary>Can I delete the whole AppData folder?</summary><p>No. Programs keep their settings and data there; deleting it can reset or break them.</p></details>
+<details><summary>Why does AppData fill up again?</summary><p>Caches grow back as you use your programs. That is normal; they are clearing space only until the program needs it again.</p></details>
+<h2>Get Sparewise, free</h2>
+<p><a class="button" href="https://apps.microsoft.com/detail/9NHXHFH3CF1B">Get it from the Microsoft Store</a> &nbsp; <a href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">or download the installer</a></p>
+<p class="meta">Free · Windows 10 and 11 · No account · No telemetry · You approve every change; most can be put back</p>
+<p>More guides: <a href="/guides/">all guides</a></p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="/guides/">Guides</a><a href="/privacy/">Privacy</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a>
+  <p>© 2026 the Sparewise developer. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

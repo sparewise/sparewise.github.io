@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C: drive full but no big files? Where the space hides | Sparewise</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<meta name="description" content="Space that File Explorer does not show: hidden system files, the hibernation file, Recycle Bin, Windows updates, Docker and WSL disks, and caches. How to find each.">
+<!-- seo:start -->
+<link rel="canonical" href="https://sparewise.app/c-drive-full-no-reason/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sparewise">
+<meta property="og:title" content="C: drive full but no big files? Where the space hides | Sparewise">
+<meta property="og:description" content="Space that File Explorer does not show: hidden system files, the hibernation file, Recycle Bin, Windows updates, Docker and WSL disks, and caches. How to find each.">
+<meta property="og:url" content="https://sparewise.app/c-drive-full-no-reason/">
+<meta property="og:image" content="https://sparewise.app/img/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sparewise: see why your drive is full. You approve every change.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sparewiseapp">
+<meta name="twitter:title" content="C: drive full but no big files? Where the space hides | Sparewise">
+<meta name="twitter:description" content="Space that File Explorer does not show: hidden system files, the hibernation file, Recycle Bin, Windows updates, Docker and WSL disks, and caches. How to find each.">
+<meta name="twitter:image" content="https://sparewise.app/img/og-image.png?v=2">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"C: drive full, but you cannot see why?","description":"Space that File Explorer does not show: hidden system files, the hibernation file, Recycle Bin, Windows updates, Docker and WSL disks, and caches. How to find each.","url":"https://sparewise.app/c-drive-full-no-reason/","inLanguage":"en","image":"https://sparewise.app/img/og-image.png?v=2","dateModified":"2026-10-23","author":{"@type":"Person","name":"the Sparewise developer"},"publisher":{"@type":"Organization","name":"Sparewise","url":"https://sparewise.app/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Sparewise","item":"https://sparewise.app/"},{"@type":"ListItem","position":2,"name":"C: drive full, but you cannot see why?","item":"https://sparewise.app/c-drive-full-no-reason/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does File Explorer show less than the drive uses?","acceptedAnswer":{"@type":"Answer","text":"It hides system files and does not count some protected folders. A drive map that reads every folder shows them."}},{"@type":"Question","name":"Could it be a virus?","acceptedAnswer":{"@type":"Answer","text":"Rarely. Most unexplained space is Windows files, caches or virtual disks. Run Windows Security if you are unsure."}}]}</script>
+<!-- seo:end -->
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="/">Sparewise</a>
+  <nav><a href="/">Home</a><a href="/guides/">Guides</a><a href="https://github.com/sparewise/sparewise">GitHub</a></nav>
+</header>
+<main><article>
+<h1>C: drive full, but you cannot see why?</h1>
+<p><strong>Short answer:</strong> File Explorer hides some of the biggest space users: the hibernation file, the page file, System Restore points, the Recycle Bin, old Windows updates, and virtual disks from Docker or WSL. A tool that sizes every folder shows where it went.</p>
+<h2>By hand, with Windows' own tools</h2>
+<ol>
+<li>Empty the <strong>Recycle Bin</strong> after checking it: deleted files still use space until you do.</li>
+<li>Open <strong>Settings > System > Storage</strong> and check <strong>Temporary files</strong> and <strong>System & reserved</strong>.</li>
+<li>Check for <strong>Windows.old</strong> after an upgrade; see <a href="/windows-old/">Windows.old</a>.</li>
+<li>If you use Docker or WSL, their virtual disks grow and do not shrink by themselves; see <a href="/docker-disk-space/">Docker</a> and <a href="/wsl-disk-space/">WSL</a>.</li>
+</ol>
+<h2>With Sparewise</h2>
+<ul class="ticks">
+<li>Maps every folder on the drive by size, including hidden ones, so you can see where the space went.</li>
+<li>Explains each big item in plain words and whether it usually comes back by itself.</li>
+<li>Nothing changes until you approve.</li>
+</ul>
+<h2>Questions</h2>
+<details><summary>Why does File Explorer show less than the drive uses?</summary><p>It hides system files and does not count some protected folders. A drive map that reads every folder shows them.</p></details>
+<details><summary>Could it be a virus?</summary><p>Rarely. Most unexplained space is Windows files, caches or virtual disks. Run Windows Security if you are unsure.</p></details>
+<h2>Get Sparewise, free</h2>
+<p><a class="button" href="https://apps.microsoft.com/detail/9NHXHFH3CF1B">Get it from the Microsoft Store</a> &nbsp; <a href="https://github.com/sparewise/sparewise/releases/latest/download/Sparewise-win-Setup.exe">or download the installer</a></p>
+<p class="meta">Free · Windows 10 and 11 · No account · No telemetry · You approve every change; most can be put back</p>
+<p>More guides: <a href="/guides/">all guides</a></p>
+</article></main>
+<footer>
+  <a href="/">Home</a><a href="/guides/">Guides</a><a href="/privacy/">Privacy</a><a href="https://github.com/sparewise/sparewise/issues/new">Report a problem</a>
+  <p>© 2026 the Sparewise developer. Free to use; proprietary.</p>
+</footer>
+</body>
+</html>

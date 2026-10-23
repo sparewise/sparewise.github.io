@@ -27,6 +27,12 @@
 - [Games are taking all my disk space](https://sparewise.app/steam-games-disk-space/): How much space Steam, Epic and Xbox games use, which game files are safe to clear (shader caches), and how to move or remove games properly.
 - [The WinSxS folder is huge: can you shrink it?](https://sparewise.app/winsxs-folder-too-big/): What the WinSxS folder is, why Explorer shows it bigger than it really is, and the safe Windows command that shrinks it.
 - [What is pagefile.sys?](https://sparewise.app/pagefile-sys/): What the pagefile.sys file is, why it is big, and how to resize or move it safely instead of deleting it.
+- [Why is "System & reserved" so big?](https://sparewise.app/system-storage-windows-11/): What Windows 11 counts as System & reserved, which parts you can shrink with Windows' own settings, and which to leave alone.
+- [Why is my AppData folder so big?](https://sparewise.app/appdata-folder-too-big/): What fills the hidden AppData folder on Windows, which parts are caches that usually rebuild by themselves, and which hold your settings and data.
+- [C: drive full, but you cannot see why?](https://sparewise.app/c-drive-full-no-reason/): Space that File Explorer does not show: hidden system files, the hibernation file, Recycle Bin, Windows updates, Docker and WSL disks, and caches. How to find each.
+- [Disk Cleanup or Storage Sense?](https://sparewise.app/disk-cleanup-vs-storage-sense/): What Windows' Disk Cleanup and Storage Sense each clear, how to run them, and what neither of them covers.
+- [How to find large files on Windows 11](https://sparewise.app/find-large-files-windows-11/): Find the biggest files on your PC with File Explorer search or a drive map, and decide what to keep, move or remove.
+- [How to find duplicate files on Windows](https://sparewise.app/find-duplicate-files-windows/): Find files saved twice on Windows, check that they really are identical, and keep the copy you need.
 - [Can I delete the Windows.old folder?](https://sparewise.app/windows-old/): What Windows.old is, when it is safe to remove, and how to remove it with Windows Settings.
 - [What are Delivery Optimization files?](https://sparewise.app/delivery-optimization-files/): What Windows Delivery Optimization files are, whether they are safe to delete, and how to clear and limit them.
 - [Docker is using too much disk space on Windows](https://sparewise.app/docker-disk-space/)
